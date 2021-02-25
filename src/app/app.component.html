@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-dark badge-secondary">
+ <a class="navbar-brand" href="/">
+    Gallinero
+    <img
+    width="80"
+    alt="80"
+    src="https://tupersonajefavorito.com/wp-content/uploads/2018/05/toy-story-2_-Al-McWhiggin-pollo.jpg"
+  />
+  
+    <div class="spacer"></div>
+  </a>
+ 
+</nav>
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 mt-4">
+      <ul class="list-group">
+        <li 
+        *ngFor="let Chicken of chickenArray"
+        class="list-group-item list-group-item-action"
+        (click)="openForEdit(Chicken)"
+        [class.active]="Chicken == selectedChicken">
+        <span class="badge badge-secondary"> {{Chicken.id}} </span>
+        {{Chicken.name}} - {{Chicken.eggs}}
+      </li>
+      
+
+      </ul>
+      <div class ="card mt-4">
+      <div class="card-body">
+        <div class="card-title">
+          Ingresar Nueva Gallina
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="selectedChicken.name" placeholder="Insert A Name" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <input type="text" [(ngModel)]="selectedChicken.eggs" placeholder="Insert eggs" class="form-control">
+        </div>
+        <button (click)="addOrEdit()" class="btn btn-secondary">
+          Submit
+        </button>
+        <button
+        *ngIf="selectedChicken.id !== 0"
+        class="btn btn btn-danger"
+        (click) = "delete()">
+        Delete
+          
+        </button>
+
+        <ng-template
+        
+
+   </div>
+   <div class="col-md-4">
+     <img src="" alt="">
+  </div>
+  <div>
+</div>
